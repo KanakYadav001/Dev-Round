@@ -14,7 +14,6 @@ import mongoose from "mongoose"
     password : {
     type : String,
     require: true,
-
     },
     role : {
         type : String,
@@ -23,7 +22,7 @@ import mongoose from "mongoose"
     },
     status : {
         type : String ,
-        enum : ["ACTIVE", "INACTIVE", "SUSPENDED"],
+        enum : ["ACTIVE", "SUSPENDED"],
         default : "ACTIVE"
     }
 
