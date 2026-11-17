@@ -5,14 +5,39 @@ const InterviewerScema = new mongoose.Schema(
     userId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
-      require: true,
+      required: true,
     },
+    headline: {
+      type: String,
+      required: true,
+    },
+    bio: {
+      type: String,
+      required: true,
+    },
+
     experience: {
       type: Number,
       require: true,
     },
-    skills: [String],
+    skills: {
+      type: [String],
+      required: true,
+    },
     techStack: [String],
+    currentCompany: String,
+    currentJobTitle: String,
+    linkdinUrl: String,
+    profileImageUrl: String,
+
+    reviewReason: String,
+    reviewedBy: { 
+      type : mongoose.Types.ObjectId,
+      ref : 'User'
+    },
+
+    reviewedAt: Date,
+    submittedAt: Date,
 
     profileStatus: {
       type: String,
@@ -21,7 +46,10 @@ const InterviewerScema = new mongoose.Schema(
     },
   },
   {
-    timestamps: true,
+    timestamps: {
+      createdAt: "created_at",
+      updatedAt: "updated_at",
+    },
   },
 );
 

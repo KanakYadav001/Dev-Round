@@ -3,7 +3,6 @@ import { UserModel } from "../model/user.model";
 import { InterviewerModel } from "../model/interviewer.model";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import { password } from "bun";
 
 export const auth = {
   signIn: async (req: Request, res: Response) => {

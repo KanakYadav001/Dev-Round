@@ -1,36 +1,41 @@
-import mongoose from "mongoose"
+import mongoose from "mongoose";
 
- const UserScema = new mongoose.Schema({
-    name : {
-        type : String ,
-        require : true
+const UserScema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      require: true,
     },
-    email : {
-    type : String,
-    require: true,
-    unique : true
-
+    email: {
+      type: String,
+      require: true,
+      unique: true,
     },
-    password : {
-    type : String,
-    require: true,
+    password: {
+      type: String,
+      requird: true,
     },
-    role : {
-        type : String,
-        enum : ["CANDIDATE", "INTERVIEWER", "ADMIN"],
-
+    role: {
+      type: String,
+      enum: ["CANDIDATE", "INTERVIEWER", "ADMIN"],
     },
-    status : {
-        type : String ,
-        enum : ["ACTIVE", "SUSPENDED"],
-        default : "ACTIVE"
-    }
+    status: {
+      type: String,
+      enum: ["ACTIVE", "INACTIVE", "SUSPENDED"],
+      default: "ACTIVE",
+    },
+    avtarUrl: String,
+    phoneNumber: String,
 
+    googleSubject: String,
+    lastLoginAt: Date,
+  },
+  {
+    timestamps: {
+      createdAt: "created_at",
+      updatedAt: "updated_at",
+    },
+  },
+);
 
-
- },{
-    timestamps : true
- })
-
-
- export const  UserModel = mongoose.model('User' , UserScema)
+export const UserModel = mongoose.model("User", UserScema);
