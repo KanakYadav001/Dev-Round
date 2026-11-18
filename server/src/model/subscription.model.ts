@@ -45,6 +45,6 @@ const subscriptionSchema = new mongoose.Schema(
 );
 
 export const subscriptionModel = mongoose.model(
-  "subscriptions",
+  "Subscriptions",
   subscriptionSchema,
 );
